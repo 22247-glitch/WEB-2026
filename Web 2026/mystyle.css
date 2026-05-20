@@ -1,0 +1,77 @@
+* {
+  font-family: 'Helvetica';
+  color: rgb(255, 255, 255);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2, p {
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #81bd86;
+}
+
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+ul li a {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a img:hover {
+  background-color: #5a915e;
+}
+
+.streak {
+  border-radius: 25px;
+  background-color: #81bd86;
+  margin: 20px;
+  padding: 20px;
+  
+}
+
+.streakbutton {
+  background-color: #4c9b53;
+  border: solid 1px white;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.post {
+  border-radius: 25px;
+  background-color: #81bd86;
+  margin: 20px;
+  padding: 20px;
+  float: left;
+}
+.streaks {
+  border-radius: 25px;
+  background-color: #81bd86;
+  margin: 20px;
+  padding: 20px;
+  float: right;
+}
