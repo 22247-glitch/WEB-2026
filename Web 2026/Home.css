@@ -20,7 +20,6 @@ ul {
   background-color: #81bd86;
 }
 
-
 .left {
     float: left;
 }
@@ -64,14 +63,23 @@ ul li a img:hover {
 .post {
   border-radius: 25px;
   background-color: #81bd86;
-  margin: 20px;
-  padding: 20px;
+  margin-left: 20px;
+  padding-left: 20px;
   float: left;
+  width: 46%; 
+  overflow-y: auto;
+  height: 800px;
 }
 .streaks {
   border-radius: 25px;
   background-color: #81bd86;
-  margin: 20px;
-  padding: 20px;
+  margin-right: 20px;
+  padding-right: 20px;
   float: right;
+  width: 46%; 
+  overflow-y: auto;
+  height: 800px;
+}
+.center {
+  text-align: center;
 }
