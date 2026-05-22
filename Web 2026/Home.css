@@ -1,17 +1,20 @@
 * {
-  font-family: 'Helvetica';
+  font-family: 'Helvetica', Arial, sans-serif;
   color: rgb(255, 255, 255);
+  box-sizing: border-box; 
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: #f3f7f4;
 }
 
-h2, p {
+h2, p, h1 {
   margin: 10px;
 }
 
+/*navbar*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -19,6 +22,8 @@ ul {
   overflow: hidden;
   background-color: #81bd86;
 }
+
+
 
 .left {
     float: left;
@@ -35,51 +40,63 @@ ul li a {
   text-decoration: none;
 }
 
-ul li a img:hover {
-  background-color: #5a915e;
+/* grayed out */
+ul li a:hover {
+  background-color: #6da772;
 }
+
 
 .streak {
   border-radius: 25px;
   background-color: #81bd86;
   margin: 20px;
-  padding: 20px;
-  
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .streakbutton {
   background-color: #4c9b53;
-  border: solid 1px white;
+  border: solid 2px white;
   color: white;
-  padding: 20px;
+  padding: 12px 24px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  font-weight: bold;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 8px 4px 0 0;
   cursor: pointer;
   border-radius: 12px;
 }
-.post {
+
+.streakbutton:hover {
+  background-color: #3b7b41;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 20px 20px 20px;
+}
+
+.post, .streaks {
   border-radius: 25px;
   background-color: #81bd86;
-  margin-left: 20px;
-  padding-left: 20px;
-  float: left;
-  width: 46%; 
+  padding: 20px;
+  width: 50px; 
+  flex: 1; 
   overflow-y: auto;
-  height: 800px;
+  height: 650px; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.streaks {
-  border-radius: 25px;
-  background-color: #81bd86;
-  margin-right: 20px;
-  padding-right: 20px;
-  float: right;
-  width: 46%; 
-  overflow-y: auto;
-  height: 800px;
+
+.card-item {
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 1.2rem;
 }
+
 .center {
   text-align: center;
 }
