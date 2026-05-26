@@ -24,9 +24,7 @@
   height: 650px; 
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.center {
-  text-align: center;
-}
+
 body {
   margin: 0;
   padding: 0;
@@ -39,6 +37,7 @@ h2, p, h1{
   display: flex;
   justify-content: center;
   margin: 0 20px 50px 20px;
+  text-align: center;
 }
 .inputs {
   background-color: #6da772;
