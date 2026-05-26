@@ -7,30 +7,29 @@
   <title>Addictionlingo</title>
 </head>
 <body>
-
-
-
   <div class="content-wrapper">
-
-    <div class="login">
+    <h1 class="top">Welcome to AddictionLingo!</h1>
+  </div>
+  
+  <div class="content-wrapper">
+    <form id="LoginForm" name="LoginForm" method="post" action=""> 
+      <div class="login">
       <h1 class="center">Login:</h1>
-
-
+      <!-- text field-->
       <div class="inputs">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input input name="Username" type="text" required="required" placeholder="Enter Username">
       </div>
+      <!-- text field-->
       <div class="inputs">
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input input name="Password" type="text" required="required" placeholder="Enter Password">
       </div>
+      <!-- button-->
       <div class="inputs">
-        <label><b>Login</b></label>
-        <b type="password" placeholder="Enter Password" name="psw" required>
+        <input name="Login" type="submit" class="button" id="Login" value="Login">
       </div>
-      
-      
-    </div> 
+    </form>
 
   </div> 
 
