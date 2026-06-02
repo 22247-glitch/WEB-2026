@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Tracking.css">
+  <title>AddictionLingo • Tracking</title>
+</head>
+<body>
+
+  <ul>
+    <li class="left"><a href="#home"><h2>AddictionLingo</h2></a></li>
+    <li class="right"><a href="#news"><img src="enter.png" width="50px" alt="Logout"></a></li>
+    <li class="right"><a href="#news"><img src="settings.png" width="50px" alt="Settings"></a></li>
+    <li class="right"><a href="#contact"><img src="alarm.png" width="50px" alt="Alerts"></a></li>
+    <li class="right"><a href="#about"><img src="messenger.png" width="50px" alt="Messages"></a></li>
+    <li class="right"><a href="#contact"><img src="user.png" width="50px" alt="User"></a></li>
+    <li class="right"><a href="#about"><img src="home.png" width="50px" alt="Home"></a></li>
+  </ul>
+  
+  <div class="streak">
+
+    
+    <h1>Addiction: <span contenteditable="true">Edit..</span></h1>
+    <button class="streakbutton">Share an update</button>
+    <button class="streakbutton">Todays check in</button>
+  </div>
+
+  <div class="content-wrapper">
+  
+  <div class="post" id="task-list">
+    <h1 class="center">Daily Tasks:</h1>
+    
+    <div class="card-item">
+      <span contenteditable="true">Task 1</span>
+      <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
+    </div>
+    <div class="card-item">
+      <span contenteditable="true">Task 2</span>
+      <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
+    </div>
+    <div class="card-item">
+      <span contenteditable="true">Task 3</span>
+      <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
+    </div>
+    
+    <div class="card-item">
+      <button class="task-btn" id="add-task-btn">+ Add Task</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('add-task-btn').addEventListener('click', function() {
+    const newCard = document.createElement('div');
+    newCard.className = 'card-item';
+    
+    const newSpan = document.createElement('span');
+    newSpan.contentEditable = 'true';
+    newSpan.innerText = 'New Task';
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.innerHTML = 'x';
+    deleteBtn.onclick = function() {
+      this.parentElement.remove();
+    };
+    
+    newCard.appendChild(newSpan);
+    newCard.appendChild(deleteBtn);
+    
+    const buttonContainer = this.parentElement;
+    const taskList = document.getElementById('task-list');
+    taskList.insertBefore(newCard, buttonContainer);
+    
+    newSpan.focus();
+  });
+</script>
+
+</body>
+</html>
