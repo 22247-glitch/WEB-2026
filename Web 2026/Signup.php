@@ -1,8 +1,28 @@
-<!DOCTYPE html>
 <?php
-
+  //start the session and create the connection
+  session_start();
+  include"conn.php";
 ?>
 
+<?php
+  //Run when the SignUp button on the form is hit 
+  if(isset($_POST['SignUp'])) {	
+  //Assign a variable to each of the fields on the form. Ensure the values match the form field names exactly
+	
+	$Password = $_POST['Password'];
+	$file = $_FILES['file']['name'];
+
+  //Use the INSERT INTO statement to insert each of the values from the form to a new record in the members table 
+	$sql = $conn->query("INSERT INTO member (first_name, last_name, favourite_pet, email, password, avatar) 
+		Values('$FName','$LName','$Pet','$Email','$Password','$file')");
+
+  //Use the header function to redirect users to the login page	
+	header('Location: login.php');
+  }  
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,7 +47,7 @@
       <!-- text field-->
       <div class="inputs">
         <label><b>Password</b></label>
-        <input input name="Password" type="text" required="required" placeholder="Enter Password">
+        <input name="Password" type="text" required="required" placeholder="Enter Password">
       </div>
       <!-- button-->
       <div class="inputs">
