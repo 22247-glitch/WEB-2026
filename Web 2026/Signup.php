@@ -6,18 +6,17 @@
 
 <?php
   //Run when the SignUp button on the form is hit 
-  if(isset($_POST['SignUp'])) {	
-  //Assign a variable to each of the fields on the form. Ensure the values match the form field names exactly
-	
-	$Password = $_POST['Password'];
-	$file = $_FILES['file']['name'];
+  if(isset($_POST['Signup'])) {	
+    //Assign a variable to each of the fields on the form. Ensure the values match the form field names exactly
+    $Username = $_POST['Username'];
+    $Password = $_POST['Password'];
+    $Streak = 0;
+    //Use the INSERT INTO statement to insert each of the values from the form to a new record in the members table 
+    $sql = $conn->query("INSERT INTO member (username, password, streak) 
+    Values('$Username', '$Password', $Streak)");
 
-  //Use the INSERT INTO statement to insert each of the values from the form to a new record in the members table 
-	$sql = $conn->query("INSERT INTO member (first_name, last_name, favourite_pet, email, password, avatar) 
-		Values('$FName','$LName','$Pet','$Email','$Password','$file')");
-
-  //Use the header function to redirect users to the login page	
-	header('Location: login.php');
+    //Use the header function to redirect users to the login page	
+    header('Location: login.php');
   }  
 ?>
 
@@ -27,7 +26,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Signup.css">
+  <link rel="stylesheet" href="SignUp.css">
   <title>Addictionlingo</title>
 </head>
 <body>
@@ -37,7 +36,7 @@
   
   <div class="content-wrapper">
     <form id="RegisterForm" name="RegisterForm" method="post" action="" enctype="multipart/form-data">
-        <div class="login">
+        <div class="title">
       <h1 class="center">Signup to AddictionLingo:</h1>
       <!-- text field-->
       <div class="inputs">
