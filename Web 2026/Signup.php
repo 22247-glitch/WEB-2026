@@ -13,7 +13,7 @@
     $Streak = 0;
     //Use the INSERT INTO statement to insert each of the values from the form to a new record in the members table 
     $sql = $conn->query("INSERT INTO member (username, password, streak) 
-    Values('$Username', '$Password', $Streak)");
+    Values('$Username', '$Password', '$Streak')");
 
     //Use the header function to redirect users to the login page	
     header('Location: login.php');
@@ -50,7 +50,7 @@
       </div>
       <!-- button-->
       <div class="inputs">
-        <input name="SignUp" type="submit" class="button" id="SignUp" value="SignUp">
+        <input name="Signup" type="submit" class="button" id="SignUp" value="SignUp">
       </div>
       
     </form>
