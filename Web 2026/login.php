@@ -10,7 +10,7 @@ if(isset($_POST['Login'])){
     
     $result = $conn->query("select * from member where username='$LoginUsername' and password='$LoginPassword'");
     
-    if ($result && $result->num_rows > 0) {
+    if ($result && $result->num_rows > 0) {	
         $row = $result->fetch_array();
         
         $id = $row['user_id'];
@@ -23,7 +23,7 @@ if(isset($_POST['Login'])){
 
         if($LoginUsername == $Username && $LoginPassword == $Password) {
             ?>
-            <script>window.location ="Home.html?id=<?php echo $id;?>";</script>
+            <script>window.location ="Home.php?id=<?php echo $id;?>";</script>
             <?php
             exit();
         }
