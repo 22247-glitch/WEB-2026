@@ -14,7 +14,6 @@ h2, p, h1 {
   margin: 10px;
 }
 
-/*navbar*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -22,8 +21,6 @@ ul {
   overflow: hidden;
   background-color: #81bd86;
 }
-
-
 
 .left {
     float: left;
@@ -40,7 +37,6 @@ ul li a {
   text-decoration: none;
 }
 
-/* grayed out */
 ul li a:hover {
   background-color: #6da772;
 }
@@ -64,6 +60,18 @@ ul li a:hover {
   font-size: 16px;
   margin: 8px 4px 0 0;
   cursor: pointer;
+  border-radius: 12px;
+}
+
+.streakFbutton {
+  background-color: #4c9b53;
+  border: solid 2px white;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 8px 4px 0 0;
   border-radius: 12px;
 }
 
@@ -112,7 +120,6 @@ ul li a:hover {
   top: 50% !important;
   transform: translateY(-50%) !important;
   
-  /* Reset button visuals */
   background: transparent !important;
   border: none !important;
   color: #ff4d4d !important;
@@ -146,4 +153,116 @@ ul li a:hover {
 
 .card-item:has(.task-btn):hover {
   filter: brightness(0.9);
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 10px 0;
+  padding: 15px 45px 15px 15px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+.task-text-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  transition: opacity 0.2s, text-decoration 0.2s;
+}
+
+.task-title {
+  font-weight: bold;
+  outline: none;
+  word-wrap: break-word;
+}
+
+.task-time {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 4px;
+  outline: none;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #4c9b53;
+}
+
+.crossed-out {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.add-button-card {
+  padding: 15px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.checkbox-container:hover input ~ .custom-checkmark {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.checkbox-container input:checked ~ .custom-checkmark {
+  background-color: #4c9b53;
+  border-color: #4c9b53;
+}
+
+.custom-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .custom-checkmark:after {
+  display: block;
+}
+
+.checkbox-container .custom-checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container:active .custom-checkmark {
+  transform: scale(0.9);
 }
