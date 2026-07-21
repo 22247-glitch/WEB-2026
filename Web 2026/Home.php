@@ -17,7 +17,7 @@ $username = isset($_SESSION['Username']) ? $_SESSION['Username'] : 'Guest';
 <body>
 
   <ul>
-    <li class="left"><a href="Home.html"><h2>AddictionLingo</h2></a></li>
+    <li class="left"><a href="Home.php"><h2>AddictionLingo</h2></a></li>
     <li class="right"><a href="#news"><img src="enter.png" width="50px" alt="Logout"></a></li>
     <li class="right"><a href="#news"><img src="settings.png" width="50px" alt="Settings"></a></li>
     <li class="right"><a href="#Tracking.html"><img src="alarm.png" width="50px" alt="Alerts"></a></li>
@@ -27,6 +27,7 @@ $username = isset($_SESSION['Username']) ? $_SESSION['Username'] : 'Guest';
   </ul>
 
   <div class="streak">
+    <h1>Welcome back, <?php echo htmlspecialchars($username); ?>!</h1>
     <h1>Your streak: 17🔥</h1>
     <button class="streakbutton">Share an update</button>
     <button class="streakbutton">Todays check in</button>
@@ -53,7 +54,7 @@ $username = isset($_SESSION['Username']) ? $_SESSION['Username'] : 'Guest';
       <div class="card-item">Johm: 9 days 🔥</div>
       <div class="card-item">James: 2 days 🔥</div>
     </div> 
-    <h1>Welcome back, <?php echo htmlspecialchars($username); ?>!</h1>
+
 
   </div> 
 
