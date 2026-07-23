@@ -69,7 +69,7 @@ if(isset($_POST['Login'])){
       </div>
       
       <div class="inputs">
-        <input name="Login" type="submit" class="button" id="LogIn" value="LogIn">
+        <input name="Login" type="submit" class="button" id="LogIn" value="Log in">
       </div>
     </form>
   </div> 
