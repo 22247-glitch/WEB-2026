@@ -14,6 +14,7 @@ h2, p, h1 {
   margin: 10px;
 }
 
+
 /*navbar*/
 ul {
   list-style-type: none;
@@ -54,21 +55,24 @@ ul li a:hover {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .view {
   background-color: #4c9b53;
   border: solid 2px white;
   color: white;
-  padding: 12px 24px;
-  text-align: center;
+  padding: 6px 14px;
   font-weight: bold;
-  font-size: 16px;
-  margin: 8px 4px 0 0;
+  font-size: 13px;
   cursor: pointer;
-  border-radius: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
+  border-radius: 8px;
+  position: static; 
+  transform: none;
 }
-
 .view:hover {
   background-color: #3b7b41;
 }
@@ -93,13 +97,14 @@ ul li a:hover {
 
 .card-item {
   background-color: rgba(255, 255, 255, 0.15);
-  margin: 10px 0;
-  padding: 15px;
+  margin: 12px 0;
+  padding: 14px;
   border-radius: 15px;
-  font-size: 1.2rem;
   display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 10px;           
 }
-
 .center {
   text-align: center;
 }
@@ -123,4 +128,9 @@ ul li a:hover {
 .inputs input {
   color: black;
   background-color: white;
+}
+
+.username {
+  font-weight: bold; 
+  font-size: 1.2rem;
 }
