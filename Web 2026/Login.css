@@ -1,33 +1,29 @@
 * {
   font-family: 'Helvetica', Arial, sans-serif;
   color: rgb(255, 255, 255);
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
-
 
 .top {
   margin-top: 10px;
   border-radius: 25px;
   background-color: #81bd86;
   padding: 20px;
-  width: 100%;
+  width: 100%; 
   overflow-y: auto;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-
-.login {
+.title {
   border-radius: 25px;
   background-color: #81bd86;
   padding: 20px;
-  width: 100%;
+  width: 100%; 
   overflow-y: auto;
-  height: 650px;
+  height: 650px; 
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
-
 .center {
   text-align: center;
 }
@@ -43,7 +39,6 @@ h2, p, h1{
   display: flex;
   justify-content: center;
   margin: 0 20px 50px 20px;
-  text-align: center;
 }
 .inputs {
   background-color: #6da772;
@@ -63,4 +58,9 @@ h2, p, h1{
 .inputs input {
   color: black;
   background-color: white;
+}
+
+.wrong-input {
+  text-align: center;
+  color: red;
 }
