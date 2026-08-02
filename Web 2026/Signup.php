@@ -47,7 +47,7 @@
   </div>
   
   <div class="content-wrapper">
-    <form id="RegisterForm" name="RegisterForm" method="post" action="" enctype="multipart/form-data">
+    <form id="RegisterForm" name="RegisterForm" method="post" enctype="multipart/form-data">
       <div class="title" id="wrapper">
 
         <h1 class="center">Signup to AddictionLingo:</h1>
@@ -59,7 +59,7 @@
         <!-- text field-->
         <div class="inputs">
           <label><b>Password</b></label>
-          <input name="Password" type="text" required="required" placeholder="Enter Password">
+          <input name="Password" type="password" required="required" placeholder="Enter Password">
         </div>
         <!-- button-->
         <div class="inputs">
