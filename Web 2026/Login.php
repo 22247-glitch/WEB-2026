@@ -8,7 +8,17 @@ if(isset($_POST['Login'])){
     $LoginPassword = $_POST['Password'];
 
     
-    $result = $conn->query("select * from member where username='$LoginUsername' and password='$LoginPassword'");
+    //$result = $conn->query("select * from member where username='$LoginUsername' and password='$LoginPassword'");
+    
+
+    // safe code: the question marks mean that they are placeholders that get replaced by s
+    $stmt = $conn->prepare("SELECT * FROM member WHERE username = ? AND password = ?");
+    
+    $stmt->bind_param("ss", $LoginUsername, $LoginPassword);
+    
+    // executes the statement to get results
+    $stmt->execute();
+    $result = $stmt->get_result();
     
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_array();
@@ -50,7 +60,7 @@ if(isset($_POST['Login'])){
     <h1 class="top">Welcome to AddictionLingo!</h1>
   </div>
   <div class="content-wrapper">
-    <form id="LoginForm" name="LoginForm" method="post" action=""> 
+    <form id="LoginForm" name="LoginForm" method="post"> 
 
       <div class="title" id="wrapper">
         <h1 class="center">Login:</h1>
