@@ -1,9 +1,18 @@
 <?php
-// 1. Start the session at the very top of the file
-session_start();
+  session_start();
+  include "conn.php";
+  $username = isset($_SESSION['Username']) ? $_SESSION['Username'] : 'Guest';
+  $result = $conn->query("SELECT Username, streak FROM member");
 
-// 2. Optional: Set a fallback if the session variable isn't set yet
-$username = isset($_SESSION['Username']) ? $_SESSION['Username'] : 'Guest';
+  $array = [];
+  while ($row = $result->fetch_assoc()) {
+
+    $array[] = $row;
+
+  }
+  // search in the array for username and gets the index
+  $index = array_search($username, array_column($array, 'Username'));
+  $streak = $array[$index]['streak'];
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +37,7 @@ $username = isset($_SESSION['Username']) ? $_SESSION['Username'] : 'Guest';
 
   <div class="streak">
     <h1>Welcome back, <?php echo htmlspecialchars($username); ?>!</h1>
-    <h1>Your streak: 17🔥</h1>
+    <h1>Your streak: <?php echo htmlspecialchars($streak); ?>🔥</h1>
     <button class="streakbutton">Share an update</button>
     <button class="streakbutton">Todays check in</button>
   </div>
