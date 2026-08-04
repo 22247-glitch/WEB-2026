@@ -8,24 +8,54 @@
   //Run when the SignUp button on the form is hit 
   if(isset($_POST['Signup'])) {	
     //Assign a variable to each of the fields on the form. Ensure the values match the form field names exactly
-    $Username = $_POST['Username'];
+    $Username = trim($_POST['Username']);
     $Password = $_POST['Password'];
     $Streak = 0;
+    $Toolong = false;
+    $alreadyIn = false;
     //Use the INSERT INTO statement to insert each of the values from the form to a new record in the members table 
     
 
-    //see if username is already in database
-    $result = $conn->query("select * from member where username='$Username'");
 
-    if ($result && $result->num_rows > 0){
-      $alreadyIn = true;
-    } 
-    else{
-      $sql = $conn->query("INSERT INTO member (username, password, streak) 
-      Values('$Username', '$Password', '$Streak')");
-      //redirect to login
-      header('Location: login.php');
+    if (strlen($Username) > 10) {
+      $Toolong = true;
     }
+    else {
+      //see if username is already in database
+      //$result = $conn->query("select * from member where username='$Username'");
+      //good
+      $stmt = $conn->prepare("select * from member where username=?");
+      
+      $stmt->bind_param("s", $Username);
+
+      $stmt->execute();
+
+      $result = $stmt->get_result();
+      // executes the statement to get results
+      $stmt->execute();
+
+      $result = $stmt->get_result();
+      //good
+
+      if ($result && $result->num_rows > 0){
+        $alreadyIn = true;
+      } 
+      else {
+        //$sql = $conn->query("INSERT INTO member (username, password, streak) 
+        //Values('$Username', '$Password', '$Streak')");
+
+        $insert = $conn->prepare("INSERT INTO member (username, password, streak) VALUES (?, ?, ?)");
+        $insert->bind_param("ssi", $Username, $Password, $Streak);
+        $insert->execute();
+
+        //redirect to login
+        header('Location: login.php');
+        exit();
+      }   
+    }
+
+
+    
 
 
     
@@ -72,6 +102,7 @@
 </html>
 <script>
   const wrongInput = <?php echo json_encode($alreadyIn); ?>;
+  const longusername = <?php echo json_encode($Toolong); ?>;
   
 
   const container = document.getElementById('wrapper');
@@ -83,8 +114,14 @@
     error.classList.add("wrong-input");
     container.appendChild(error);
   }
+
+  if (longusername == true) {
+    error.textContent = "Username too long keep it under 10 characters";
+    error.classList.add("wrong-input");
+    container.appendChild(error);
+  }
+
   
 
-  console.log(wrong);
 
 </script>
